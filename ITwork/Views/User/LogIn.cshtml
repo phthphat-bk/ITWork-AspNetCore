@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "LogIn";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Log In</h2>
+@{ 
+    var result = (string)ViewData["Result"];
+    if (result == "Successful")
+    {
+        <p>You has logged in</p>
+    }
+    else
+    {
+        <p>Unseccessful</p>
+    }
+}
+

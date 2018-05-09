@@ -1,0 +1,19 @@
+﻿@using ITwork.Models
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+@if (UserModel._isLogIn)
+{
+    <p>Another user has log in. Please log out</p>;
+}
+else
+{
+    <form asp-controller = "User" asp-action = "LogIn" >
+    <input name = "username" placeholder = "Username" />
+    <input name = "password" placeholder = "Password" type = "password" />
+    <input type = "submit" value = "Log In" />
+    </form >
+}

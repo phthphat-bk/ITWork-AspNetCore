@@ -1,0 +1,37 @@
+﻿@model System.Data.DataTable
+@using System.Data;
+@{
+    ViewData["Title"] = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    var job = (string)ViewData["SearchJob"];
+    var company = (string)ViewData["SearchCompany"];
+    var location = (string)ViewData["SearchLocation"];
+}
+<h2>Search result of job: "@job" of company: "@company" in location: "@location"</h2>
+@{
+    if (Model.Rows.Count == 0)
+    {
+        <p>No result</p>
+    }
+    else
+    {
+        foreach (DataRow item in Model.Rows)
+        {
+            <div class="media">
+                <div class="media-left">
+                    <a href="#">
+                        <img class="media-object" src="..." alt="...">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h3 class="media-heading">@item[0] - @item[1]</h3>
+                    @item[2]
+                    <h4>Location: @item[3]</h4>
+                </div>
+            </div>
+        }
+
+    }
+}

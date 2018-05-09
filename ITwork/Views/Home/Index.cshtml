@@ -1,0 +1,30 @@
+﻿@model System.Data.DataTable
+@using System.Data;
+@using ITwork.Models;
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (UserModel._isLogIn)
+{
+    <p>@UserModel._username <a asp-controller="User" asp-action="LogOut">Log out</a></p>
+}
+else
+{
+    <a asp-controller="user" asp-action="Index">Log In</a>
+}
+<h1>ITWork</h1>
+@foreach (DataRow item in Model.Rows)
+{
+    <div class="media">
+        <div class="media-left">
+            <a href="#">
+                <img class="media-object" src="..." alt="...">
+            </a>
+        </div>
+        <div class="media-body">
+            <h4 class="media-heading">@item[0] - @item[1]</h4>
+            @item[2]
+        </div>
+    </div>
+}
