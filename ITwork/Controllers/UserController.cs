@@ -30,6 +30,25 @@ namespace ITwork.Controllers
             }
             return View();
         }
+        public IActionResult createAccount()
+        {
+            return View();
+        }
+        public IActionResult createAccountResult(string username, string password, string firstName, string lastName, string gender, int phone, string email, int cardNumber)
+        {
+            UserViewModel userInfo = new UserViewModel();
+            userInfo.username = username;
+            userInfo.firstName = firstName;
+            userInfo.lastName  = lastName;
+            userInfo.password = password;
+            userInfo.gender = gender;
+            userInfo.phone = phone;
+            userInfo.email = email;
+            userInfo.cardNumber = cardNumber;
+            UserViewModel user = new UserViewModel();
+            user.createAccount(userInfo);
+            return View();
+        }
         public IActionResult LogOut()
         {
             UserModel.Instance.LogOut();

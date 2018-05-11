@@ -11,11 +11,11 @@ password		nvarchar(20)	not null,
 fName			nvarchar(20)	not null,
 lName			nvarchar(20),
 gender			char, -- F or M
-phonenumber		varchar(20)		not null unique,
-email			varchar(50)		not null unique,
+phonenumber		varchar(20)		not null ,
+email			varchar(50)		not null ,
 active			int				not null, -- 1:active	| 0:
 timeCreated		DATETIME, --YYYY-MM-DD HH:MI:SS	
-idCardNumber	int				not null unique,
+idCardNumber	int				not null ,
 LastTimeLogin	datetime, --YYYY-MM-DD HH:MI:SS	
 
 constraint LoginTime check (LastTimeLogin >= timeCreated),
@@ -459,7 +459,20 @@ CREATE PROC logInUser
 	@password NVARCHAR(100)
 AS
 BEGIN
-	SELECT * FROM dbo.account WHERE @username = username AND @password = password
+	DECLARE @row INT
+	SET @row = 0
+	SET @row =  (SELECT COUNT(*) FROM dbo.account WHERE @username = username AND @password = password)
+	
+	--SELECT @@ROWCOUNT
+	IF(@row != 0)
+	BEGIN
+		SELECT 1
+
+		UPDATE dbo.account
+		SET LastTimeLogin = CAST(GETDATE() AS  DATETIME)
+		WHERE @username = username
+	END
+	ELSE SELECT 0
 END
 GO
 CREATE PROC findJobAndLocation
@@ -476,3 +489,5 @@ BEGIN
 	WHERE title LIKE '%' + @job + '%' AND company.name LIKE '%' + @company + '%' AND city.name LIKE '%' + @location + '%'
 END
 GO
+
+insert into account values ('phthasdfasdphat','123456',N'Phat', 'Pham', 'M', '0906749831', 'phat@gmail.com', 1, '2017-05-22 18:02:01', 2144552, '2018-12-30 21:02:01');

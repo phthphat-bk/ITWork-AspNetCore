@@ -1,0 +1,23 @@
+﻿@model System.Data.DataTable
+@using System.Data;
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Company</h2>
+@foreach (DataRow item in Model.Rows)
+{
+    <div class="media">
+        <div class="media-left">
+            <a href="#">
+                <img class="media-object" src="..." alt="...">
+            </a>
+        </div>
+        <div class="media-body">
+            <h4 class="media-heading"><a href="@Url.Action("detail1Company","Company",new {name = item[2]})">@item[2]</a></h4>
+            @item[3]
+        </div>
+    </div>
+}
+

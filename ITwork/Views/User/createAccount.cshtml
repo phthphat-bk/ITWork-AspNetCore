@@ -1,0 +1,18 @@
+﻿@model UserViewModel
+@{
+    ViewData["Title"] = "createAccount";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create Account</h2>
+<form asp-controller="User" asp-action="createAccountResult">
+    <input name="username" placeholder="Username" />
+    <input name="firstName" placeholder="First Name"/>
+    <input name="lastName" placeholder="Last Name" />
+    <input name="password" placeholder="Password" type="password" />
+    <input name="gender" placeholder="Gender" />
+    <input name="phone" placeholder="Phone" />
+    <input name="email" placeholder="Email" />
+    <input name="cardNumber" placeholder="ID Card Number"/>
+    <input type="submit" value="Log In" />
+</form>

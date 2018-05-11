@@ -55,6 +55,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <ul class="nav navbar-nav">
                                 <li class="active"><a asp-controller="home" asp-action="index">Home</a></li>
                                 <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                                <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -72,8 +73,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div id="imaginary_container">
                     <div class="input-group stylish-input-group">
                         <form asp-controller="Home" asp-action="Search">
+                            Find job:
                             <p>
-                                <input type="text" name="job" placeholder="Job">
+                                <input type="text" name="job" placeholder="Name">
                                 <input type="text" name="company" placeholder="Company">
                                 <input type="text" name="location" placeholder="Location">
                                 <input type="submit" value="Filter" />
@@ -94,7 +96,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="footer_bottom">
                 <div class="col-md-9 footer_bottom_grid">
                     <div class="footer_bottom1">
-                        <a href="index.html">
+                        <a asp-controller="home" asp-action="index">
                             <h2><span class="fa fa-signal" aria-hidden="true"></span> ITWork <label>Just for fun</label></h2>
                         </a>
                         <p>© 2017 Soft. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>

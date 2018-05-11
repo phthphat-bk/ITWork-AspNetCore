@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
+using ITwork.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ITwork.Controllers
@@ -10,9 +12,13 @@ namespace ITwork.Controllers
     {
         public IActionResult Index()
         {
-            // string query =
-            // ViewData["AllCompany"] = 
-            return View();
+            return View(CompanyModel.showAllCompany());
+        }
+        public IActionResult detail1Company(string name)
+        {
+            CompanyModel detail = new CompanyModel();
+            detail.loadCompany(name);
+            return View(detail);
         }
     }
 }

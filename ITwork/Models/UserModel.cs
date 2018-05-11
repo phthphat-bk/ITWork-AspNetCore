@@ -27,9 +27,18 @@ namespace ITwork.Models
             string query = "EXEC dbo.logInUser @username , @password";
             if (username == null) username = "";
             if (password == null) password = "";
-            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { username, password });
-            _isLogIn = result.Rows.Count > 0 ? true : false;
-            if (_isLogIn) _username = username;
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { username, password });
+            if (result == 1)
+            {
+                _isLogIn = true;
+                _username = username;
+            }
+            //DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { username, password });
+            //_isLogIn = result.Rows.Count > 0 ? true : false;
+            //if (_isLogIn)
+            //{
+            //    _username = username;
+            //}
             return _isLogIn;
         }
         public void LogOut()
