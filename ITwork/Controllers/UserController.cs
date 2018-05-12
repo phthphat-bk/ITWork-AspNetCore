@@ -45,8 +45,7 @@ namespace ITwork.Controllers
             userInfo.phone = phone;
             userInfo.email = email;
             userInfo.cardNumber = cardNumber;
-            UserViewModel user = new UserViewModel();
-            user.createAccount(userInfo);
+            userInfo.createAccount();
             return View();
         }
         public IActionResult LogOut()

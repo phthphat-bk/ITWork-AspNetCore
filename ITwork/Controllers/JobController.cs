@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ITwork.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ITwork.Controllers
@@ -12,9 +13,10 @@ namespace ITwork.Controllers
         {
             return View();
         }
-        public IActionResult detailJob()
+        public IActionResult detailJob(string idJob)
         {
-            return View();
+            JobModel job = new JobModel();
+            return View(job.detailJob(idJob));
         }
     }
 }

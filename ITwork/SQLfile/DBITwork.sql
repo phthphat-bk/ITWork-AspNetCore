@@ -11,11 +11,11 @@ password		nvarchar(20)	not null,
 fName			nvarchar(20)	not null,
 lName			nvarchar(20),
 gender			char, -- F or M
-phonenumber		varchar(20)		not null ,
-email			varchar(50)		not null ,
+phonenumber		varchar(20)		not null unique,
+email			varchar(50)		not null unique,
 active			int				not null, -- 1:active	| 0:
 timeCreated		DATETIME, --YYYY-MM-DD HH:MI:SS	
-idCardNumber	int				not null ,
+idCardNumber	int				not null unique,
 LastTimeLogin	datetime, --YYYY-MM-DD HH:MI:SS	
 
 constraint LoginTime check (LastTimeLogin >= timeCreated),
@@ -490,4 +490,10 @@ BEGIN
 END
 GO
 
-insert into account values ('phthasdfasdphat','123456',N'Phat', 'Pham', 'M', '0906749831', 'phat@gmail.com', 1, '2017-05-22 18:02:01', 2144552, '2018-12-30 21:02:01');
+insert into account values ('phthphat','123456',N'Phat', 'Pham', 'M', '0906749801', 'phthphat@gmail.com', 1, '2017-05-22 18:02:01', 2144502, '2018-12-30 21:02:01');
+GO
+DECLARE @tempTable TABLE(id NVARCHAR(10), title NVARCHAR(100), companyName NVARCHAR(100), decription NVARCHAR(MAX) )
+INSERT INTO @tempTable SELECT job.ID, title, name ,job.description FROM dbo.job INNER JOIN dbo.company ON dbo.job.com_ID = dbo.company.ID
+SELECT * FROM @tempTable WHERE id = 3
+GO
+--DECLARE @tempTable TABLE(id NVARCHAR(10), title NVARCHAR(100), companyName NVARCHAR(100), decription NVARCHAR(MAX) ) INSERT INTO @tempTable SELECT job.ID, title, name ,job.description FROM dbo.job INNER JOIN dbo.company ON dbo.job.com_ID = dbo.company.ID SELECT* FROM @tempTable WHERE id = 3

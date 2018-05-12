@@ -12,21 +12,16 @@ namespace ITwork.Controllers
     {
         public IActionResult Index()
         {
-            string query = "EXEC [dbo].[joinTableTest]";
-
-            return View(DataProvider.Instance.ExecuteQuery(query));
+            JobModel allJob = new JobModel();
+            return View(allJob.allJobsInfo());
         }
-        public IActionResult Search(string job, string company,string location)
+        public IActionResult Search(string jobName, string company,string location)
         {
-            string query = "EXEC dbo.findJobAndLocation @job , @company , @location";
-            if (job == null) job = "";
-            if (company == null) company = "";
-            if (location == null) location = "";
-
-            ViewData["SearchJob"] = job;
+            JobModel result = new JobModel();
+            ViewData["SearchJob"] = jobName;
             ViewData["SearchCompany"] = company;
             ViewData["SearchLocation"] = location;
-            return View(DataProvider.Instance.ExecuteQuery(query, new object[] {job, company,location}));
+            return View(result.searchJob(jobName, company, location));
         }
         public IActionResult About()
         {
