@@ -4,9 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - ITwork</title>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <title>Soft a Human Resource Management Category Bootstrap Responsive Web Template | Home :: w3layouts</title>
     <!--/tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -54,8 +51,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <nav class="link-effect-2" id="link-effect-2">
                             <ul class="nav navbar-nav">
                                 <li class="active"><a asp-controller="home" asp-action="index">Home</a></li>
+                                <li><a asp-area="" asp-controller="Job" asp-action="Index">Job</a></li>
                                 <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                                <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -66,31 +63,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
 
-    <!--/search_form -->
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6 col-sm-offset-3">
-                <div id="imaginary_container">
-                    <div class="input-group stylish-input-group">
-                        <form asp-controller="Home" asp-action="Search">
-                            Find job:
-                            <p>
-                                <input type="text" name="jobName" placeholder="Name">
-                                <input type="text" name="company" placeholder="Company">
-                                <input type="text" name="location" placeholder="Location">
-                                <input type="submit" value="Search" />
-                            </p>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--//search_form -->
-
     <div class="container body-content">
-        @RenderBody()
     </div>
+        @RenderBody()
+    
     <div class="footer_w3ls">
         <div class="container">
             <div class="footer_bottom">

@@ -4,15 +4,62 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Create Account</h2>
+@*<h2>Create Account</h2>*@
+<!-- banner -->
+<div class="inner_page_agile">
+    <h3>Register</h3>
+    <p>Add Some Short Description</p>
+</div>
+<!--//banner -->
+<!--/w3_short-->
+<div class="services-breadcrumb_w3layouts">
+    <div class="inner_breadcrumb">
+
+        <ul class="short_w3ls" _w3ls>
+            <li><a asp-controller="home" asp-action="index">Home</a><span>|</span></li>
+            <li>Register</li>
+        </ul>
+    </div>
+</div>
+<!--//w3_short-->
+<div class="inner_content_info_agileits">
+    <div class="container">
+        <div class="tittle_head_w3ls">
+            <h3 class="tittle three">Register Now </h3>
+        </div>
+        <div class="inner_sec_grids_info_w3ls">
+            <div class="signin-form">
+                <div class="login-form-rec">
+                    <form asp-controller="User" asp-action="createAccountResult">
+                        <input type="text" name="username" placeholder="Username" />
+                        <input type="text" name="firstName" placeholder="First Name" required="">
+                        <input type="text" name="lastName" placeholder="Last Name" required="">
+                        <input type="text" name="gender" placeholder="Gender" />
+                        <input type="text" name="email" placeholder="Email">
+                        <input type="password" name="password" placeholder="Password" required="">
+                        <input type="text" name="phone" placeholder="Phone" />
+                        <input type="text" name="cardNumber" placeholder="CMND" />
+                        <input type="submit" value="Register">
+                    </form>
+                </div>
+                <p class="reg"><a href="#"> By clicking register, I agree to your terms</a></p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
 <form asp-controller="User" asp-action="createAccountResult">
     <input name="username" placeholder="Username" />
-    <input name="firstName" placeholder="First Name"/>
+    <input name="firstName" placeholder="First Name" />
     <input name="lastName" placeholder="Last Name" />
     <input name="password" placeholder="Password" type="password" />
     <input name="gender" placeholder="Gender" />
     <input name="phone" placeholder="Phone" />
     <input name="email" placeholder="Email" />
-    <input name="cardNumber" placeholder="ID Card Number"/>
+    <input name="cardNumber" placeholder="ID Card Number" />
     <input type="submit" value="Log In" />
 </form>

@@ -3,17 +3,67 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<!-- banner -->
+<div class="inner_page_agile">
+    <h3>Login</h3>
+    <p>Add Some Short Description</p>
 
-<h2>Index</h2>
+</div>
+<!--//banner -->
+<!--/w3_short-->
+<div class="services-breadcrumb_w3layouts">
+    <div class="inner_breadcrumb">
+
+        <ul class="short_w3ls" _w3ls>
+            <li><a asp-controller="Home" asp-action="Index">Home</a><span>|</span></li>
+            <li>Login</li>
+        </ul>
+    </div>
+</div>
+<!--//w3_short-->
+<!--Content-->
+<div class="inner_content_info_agileits">
+    <div class="container">
+        <div class="tittle_head_w3ls">
+            <h3 class="tittle three">LogIn to your Account </h3>
+        </div>
+        <div class="inner_sec_grids_info_w3ls">
+            <div class="signin-form">
+                <div class="login-form-rec">
+                    <form asp-controller="User" asp-action="LogIn">
+                        <input type="text"  name="username" placeholder="Username">
+                        <input type="password" name="password" placeholder="Password">
+                        <div class="tp">
+                            <input type="submit" value="Login">
+                        </div>
+                    </form>
+                </div>
+                <div class="login-social-grids">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                    </ul>
+                </div>
+                <p><a href="register.html"> Don't have an account?</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--//Content-->
+
+
+
+
 @if (UserModel._isLogIn)
 {
     <p>Another user has log in. Please log out</p>;
 }
 else
 {
-    <form asp-controller = "User" asp-action = "LogIn" >
-    <input name = "username" placeholder = "Username" />
-    <input name = "password" placeholder = "Password" type = "password" />
-    <input type = "submit" value = "Log In" />
-    </form >
+    <form asp-controller="User" asp-action="LogIn">
+        <input name="username" placeholder="Username" />
+        <input name="password" placeholder="Password" type="password" />
+        <input type="submit" value="Log In" />
+    </form>
 }

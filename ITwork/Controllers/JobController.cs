@@ -11,7 +11,8 @@ namespace ITwork.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            JobModel allJob = new JobModel();
+            return View(allJob.allJobsInfo());
         }
         public IActionResult detailJob(string idJob)
         {

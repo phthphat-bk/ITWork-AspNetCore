@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ITwork.Models;
+using System.Data;
 
 namespace ITwork.Controllers
 {
@@ -37,15 +38,35 @@ namespace ITwork.Controllers
         public IActionResult createAccountResult(string username, string password, string firstName, string lastName, string gender, int phone, string email, int cardNumber)
         {
             UserViewModel userInfo = new UserViewModel();
-            userInfo.username = username;
-            userInfo.firstName = firstName;
-            userInfo.lastName  = lastName;
-            userInfo.password = password;
-            userInfo.gender = gender;
-            userInfo.phone = phone;
-            userInfo.email = email;
-            userInfo.cardNumber = cardNumber;
+            userInfo._username = username;
+            userInfo._firstName = firstName;
+            userInfo._lastName  = lastName;
+            userInfo._password = password;
+            userInfo._gender = gender;
+            userInfo._phone = phone;
+            userInfo._email = email;
+            userInfo._cardNumber = cardNumber;
             userInfo.createAccount();
+            return View();
+        }
+        public IActionResult changePasswordForm()
+        {
+            return View();
+        }
+        public IActionResult changePassword(string currentPassword, string newPassword, string confirmPassword)
+        {
+            string query = "SELECT password FROM dbo.account WHERE username = @username";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { UserModel._username });
+            if (currentPassword == (string)result.Rows[0][0])
+            {
+                if (newPassword == confirmPassword)
+                {
+                    UserModel.Instance.changePassword(newPassword);
+                    ViewData["Message"] = "You has changed your password completely";
+                }
+                else ViewData["Message"] = "Confirm password failed!";
+            }
+            else ViewData["Message"] = "Your current password is invalid";
             return View();
         }
         public IActionResult LogOut()

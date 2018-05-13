@@ -7,20 +7,20 @@ namespace ITwork.Models
 {
     public class UserViewModel
     {
-        public string username { get; set; }
-        public string password { get; set; }
-        public string firstName { get; set; }
-        public string lastName { get; set; }
-        public string gender { get; set; }
-        public int phone { get; set; }
-        public string email { get; set; }
-        public int active { get; set; }
-        public int cardNumber { get; set; }
+        public string _username { get; set; }
+        public string _password { get; set; }
+        public string _firstName { get; set; }
+        public string _lastName { get; set; }
+        public string _gender { get; set; }
+        public int _phone { get; set; }
+        public string _email { get; set; }
+        public int _active { get; set; }
+        public int _cardNumber { get; set; }
         public bool createAccount()
         {
-            string query = "insert into account values( @username , @password , @fName , @lName , @gender , @phone , @email , 1, CAST(GETDATE() AS DATETIME), @card , null)";
-            DataProvider.Instance.ExecuteNonQuery(query, new object[] { username, password, firstName, lastName, gender, phone, email, cardNumber });
-            return false;
+            string query = "INSERT INTO account values( @username , @password , @fName , @lName , @gender , @phone , @email , 1, CAST(GETDATE() AS DATETIME), @card , null)";
+            DataProvider.Instance.ExecuteNonQuery(query, new object[] { _username, _password, _firstName, _lastName, _gender, _phone, _email, _cardNumber });
+            return true;
         }
     }
 }

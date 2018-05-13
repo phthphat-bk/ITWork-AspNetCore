@@ -1,0 +1,22 @@
+﻿@model System.Data.DataTable
+@using System.Data;
+@using ITwork.Models;
+@{
+    ViewData["Title"] = "Job";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>OHOHOHOHOHOHO</h1>
+@foreach (DataRow item in Model.Rows)
+{
+    <div class="media">
+        <div class="media-left">
+            <a href="#">
+                <img class="media-object" src="..." alt="...">
+            </a>
+        </div>
+        <div class="media-body">
+            <h4 class="media-heading">@item[6] - @item[14]</h4>
+            @item[11]
+        </div>
+    </div>
+}

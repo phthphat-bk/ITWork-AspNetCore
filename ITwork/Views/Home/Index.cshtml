@@ -1,13 +1,12 @@
-﻿@model System.Data.DataTable
-@using System.Data;
-@using ITwork.Models;
-@{
+﻿@{
     ViewData["Title"] = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @if (UserModel._isLogIn)
 {
-    <p>@UserModel._username <a asp-controller="User" asp-action="LogOut">Log out</a></p>
+    <p>@UserModel._username <a asp-controller="User" asp-action="LogOut">Log out</a></p><br />
+    <p><a asp-controller="user" asp-action="changePasswordForm">Change password</a></p>
+
 }
 else
 {
@@ -15,18 +14,96 @@ else
 }
 <a asp-controller="company" asp-action="index">View All company</a>
 <a asp-controller="user" asp-action="createAccount">Create account</a>
-<h1>ITWork</h1>
-@foreach (DataRow item in Model.Rows)
-{
-    <div class="media">
-        <div class="media-left">
-            <a href="#">
-                <img class="media-object" src="..." alt="...">
-            </a>
+
+<!--Banner-->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+        <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+        <li data-target="#myCarousel" data-slide-to="3" class=""></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h3>Improving workplace <span>Productivity.</span></h3>
+                    <p>Hire. Train. Retain.</p>
+                    <div class="agileits-button top_ban_agile">
+                        <a class="btn btn-primary btn-lg" href="single.html">Read More »</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="media-body">
-            <h4 class="media-heading">@item[6] - @item[14]</h4>
-            @item[11]
+        <div class="item item2">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h3>Inspiring leadership <span>innovation.</span></h3>
+                    <p>Hire. Train. Retain.</p>
+                    <div class="agileits-button top_ban_agile">
+                        <a class="btn btn-primary btn-lg" href="single.html">Read More »</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item item3">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h3>Improving workplace <span>Productivity.</span></h3>
+                    <p>Hire. Train. Retain.</p>
+                    <div class="agileits-button top_ban_agile">
+                        <a class="btn btn-primary btn-lg" href="single.html">Read More »</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item item4">
+            <div class="container">
+                <div class="carousel-caption">
+
+                    <h3>Inspiring leadership <span>innovation.</span></h3>
+                    <p>Hire. Train. Retain.</p>
+                    <div class="agileits-button top_ban_agile">
+                        <a class="btn btn-primary btn-lg scroll" href="#welcome" role="button">Read More »</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-}
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="fa fa-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="fa fa-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+    <!-- The Modal -->
+</div>
+<!--//Banner-->
+@*<!--/search_form -->
+<div>
+    <form asp-controller="Home" asp-action="Search">
+        Find job:
+        <p>
+            <input type="text" name="jobName" placeholder="Name">
+            <input type="text" name="company" placeholder="Company">
+            <input type="text" name="location" placeholder="Location">
+            <input type="submit" value="Search" />
+        </p>
+    </form>
+</div>
+<!--//search_form -->*@
+
+
+<div id="search_form" class="search_top">
+    <h2>Start your job search</h2>
+    <form asp-controller="Home" asp-action="Search">
+        <input type="text" name="jobName" placeholder="Name">
+        <input type="text" name="company" placeholder="Company">
+        <input type="text" name="location" placeholder="Location">
+        <input type="submit" value="Find Jobs">
+        <div class="clearfix"></div>
+    </form>
+</div>

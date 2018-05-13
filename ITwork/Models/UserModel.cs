@@ -33,13 +33,12 @@ namespace ITwork.Models
                 _isLogIn = true;
                 _username = username;
             }
-            //DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { username, password });
-            //_isLogIn = result.Rows.Count > 0 ? true : false;
-            //if (_isLogIn)
-            //{
-            //    _username = username;
-            //}
             return _isLogIn;
+        }
+        public void changePassword(string newPassword)
+        {
+            string query = "EXEC dbo.changePassword @username = '"+ _username +"', @newPassword = '"+ newPassword +"'";
+            DataProvider.Instance.ExecuteQuery(query);
         }
         public void LogOut()
         {

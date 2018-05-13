@@ -9,20 +9,19 @@ namespace ITwork.Models
 
     public class JobModel
     {
-        public string title { get; set; }
-        public string company { get; set; }
-        public string decription { get; set; }
-        public string salary { get; set; }
-        public string titleJob { get; set; }
+        public string _company { get; set; }
+        public string _decription { get; set; }
+        public string _salary { get; set; }
+        public string _titleJob { get; set; }
         public JobModel detailJob(string idJob)
         {
             if (idJob == null) idJob = "";
             string query = "DECLARE @tempTable TABLE(id NVARCHAR(10), title NVARCHAR(100), companyName NVARCHAR(100), decription NVARCHAR(MAX) ) INSERT INTO @tempTable SELECT job.ID, title, name ,job.description FROM dbo.job INNER JOIN dbo.company ON dbo.job.com_ID = dbo.company.ID SELECT* FROM @tempTable WHERE id = '"+ idJob + "'";
             DataTable result =  DataProvider.Instance.ExecuteQuery(query);
             JobModel jobDetail = new JobModel();
-            jobDetail.titleJob = (string)result.Rows[0][1];
-            jobDetail.company = (string)result.Rows[0][2];
-            jobDetail.decription = (string)result.Rows[0][3];
+            jobDetail._titleJob = (string)result.Rows[0][1];
+            jobDetail._company = (string)result.Rows[0][2];
+            jobDetail._decription = (string)result.Rows[0][3];
             return jobDetail;
         }
         public DataTable allJobsInfo()

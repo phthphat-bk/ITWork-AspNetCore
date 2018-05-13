@@ -461,7 +461,7 @@ AS
 BEGIN
 	DECLARE @row INT
 	SET @row = 0
-	SET @row =  (SELECT COUNT(*) FROM dbo.account WHERE @username = username AND @password = password)
+	SET @row =  (SELECT COUNT(*) FROM dbo.account WHERE @username = username AND @password = password AND active = 1)
 	
 	--SELECT @@ROWCOUNT
 	IF(@row != 0)
@@ -497,3 +497,19 @@ INSERT INTO @tempTable SELECT job.ID, title, name ,job.description FROM dbo.job 
 SELECT * FROM @tempTable WHERE id = 3
 GO
 --DECLARE @tempTable TABLE(id NVARCHAR(10), title NVARCHAR(100), companyName NVARCHAR(100), decription NVARCHAR(MAX) ) INSERT INTO @tempTable SELECT job.ID, title, name ,job.description FROM dbo.job INNER JOIN dbo.company ON dbo.job.com_ID = dbo.company.ID SELECT* FROM @tempTable WHERE id = 3
+insert into company (man_username, name, num_employee, nation, email, phoneNumber) values ('3',N'3', 3, N'3', '3', 3);
+GO
+CREATE PROC changePassword
+	@username NVARCHAR(100),
+	@newPassword NVARCHAR(100)
+AS
+BEGIN
+	UPDATE dbo.account
+	SET	password = @newPassword
+	WHERE username = @username
+END
+GO
+EXEC dbo.changePassword @username = N'bichphuong', -- nvarchar(100)
+    @newPassword = N'123456' -- nvarchar(100)
+GO
+SELECT password FROM dbo.account WHERE username = 'bichphuong'

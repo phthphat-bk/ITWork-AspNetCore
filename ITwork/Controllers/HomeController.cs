@@ -12,9 +12,13 @@ namespace ITwork.Controllers
     {
         public IActionResult Index()
         {
-            JobModel allJob = new JobModel();
-            return View(allJob.allJobsInfo());
+            return View();
         }
+        //public IActionResult job()
+        //{
+        //    JobModel allJob = new JobModel();
+        //    return View(allJob.allJobsInfo());
+        //}
         public IActionResult Search(string jobName, string company,string location)
         {
             JobModel result = new JobModel();
