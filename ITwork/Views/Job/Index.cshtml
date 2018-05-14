@@ -5,7 +5,7 @@
     ViewData["Title"] = "Job";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h1>OHOHOHOHOHOHO</h1>
+<h1>List job</h1>
 @foreach (DataRow item in Model.Rows)
 {
     <div class="media">
@@ -15,7 +15,7 @@
             </a>
         </div>
         <div class="media-body">
-            <h4 class="media-heading">@item[6] - @item[14]</h4>
+            <h4 class="media-heading"><a href=@Url.Action("detailJob", "Job", new { idJob = item[0] })>@item[6] - @item[14]</a></h4>
             @item[11]
         </div>
     </div>

@@ -285,18 +285,18 @@ constraint FK_canAppJob_can foreign key (can_username) references candicate(user
 );
 GO
 
-insert into account values ('ungvanduy','123', N'Duy', 'Ung', 'M', '0168749831', 'duy@gmail.com', 1, '2018-06-12 08:02:01', 21544123, '2018-06-12 09:02:01');
-insert into account values ('phamthanhphat','123',N'Phat', 'Pham', 'M', '0906749831', 'phat@gmail.com', 1, '2018-05-22 18:02:01', 2144552, '2018-12-30 21:02:01');
-insert into account values ('levinhchi','123','Chi', 'Le', 'M', '01221831', 'chi@gmail.com', 1, '2018-01-30 18:02:01', 2324412, '2018-05-30 12:02:01');
-insert into account values ('hongocha','aaa',N'Hồ', N'Ngọc Hà', 'F', '012545831', 'nam@gmail.com', 1, '2018-05-30 18:02:01', 214442412, '2018-11-30 12:12:01');
-insert into account values ('camly','baadbv', N'Ly', N'Cẩm', 'F', '01234539831', 'chiaa@gmail.com', 1, '2018-02-20 18:02:01', 212594312, '2018-02-28 11:02:01');
-insert into account values ('quangle','123', N'Lê', N'Quang', 'M', '01237878831', 'cianh@gmail.com', 0, '2018-01-03 11:02:01', 218824898, '2018-01-28 08:02:01');
-insert into account values ('lequyen','123abc', N'Quyên', N'Lệ', 'F', '012378831', 'doai@gmail.com', 1, '2018-01-10 18:03:01', 212213122, '2018-02-10 12:12:01');
-insert into account values ('mytam','123111', N'Tâm', N'Mỹ', 'M', '012312831', 'dung@gmail.com', 0, '2018-05-30 12:02:01', 289889412, '2018-05-30 19:02:01');
-insert into account values ('dongnhi','123123', N'Nhi', N'Đông', 'M', '01238779831', 'anhhi@gmail.com', 1, '2018-06-10 18:04:01', 213271132, '2018-06-30 07:02:01');
-insert into account values ('bichphuong','123111', N'Phương', 'Bích', 'F', '012789831', 'lequyen@gmail.com', 0, '2018-05-30 18:01:01', 288891211, '2018-11-30 03:02:01');
-insert into account values ('phuongthanh','1231311',N'Thanh', 'Phương', 'F', '0112569831', 'hongocha@gmail.com', 0, '2018-05-30 18:01:01', 71772412, '2018-09-30 22:02:01');
-insert into account values ('damvinhhung','123','Hưng', 'Đàm Vĩnh', 'M', '01545749831', 'mytam@gmail.com', 1, '2018-05-21 18:02:01', 45452412, '2018-10-01 16:02:01');
+insert into account values ('ungvanduy','123', N'Duy', 'Ung', 'M', '0168749831', 'duy@gmail.com', 1, '2017-06-12 08:02:01', 21544123, '2018-06-12 09:02:01');
+insert into account values ('phamthanhphat','123',N'Phat', 'Pham', 'M', '0906749831', 'phat@gmail.com', 1, '2017-05-22 18:02:01', 2144552, '2018-12-30 21:02:01');
+insert into account values ('levinhchi','123','Chi', 'Le', 'M', '01221831', 'chi@gmail.com', 1, '2017-01-30 18:02:01', 2324412, '2018-05-30 12:02:01');
+insert into account values ('hongocha','aaa',N'Hồ', N'Ngọc Hà', 'F', '012545831', 'nam@gmail.com', 1, '2017-05-30 18:02:01', 214442412, '2018-11-30 12:12:01');
+insert into account values ('camly','baadbv', N'Ly', N'Cẩm', 'F', '01234539831', 'chiaa@gmail.com', 1, '2017-02-20 18:02:01', 212594312, '2018-02-28 11:02:01');
+insert into account values ('quangle','123', N'Lê', N'Quang', 'M', '01237878831', 'cianh@gmail.com', 0, '2017-01-03 11:02:01', 218824898, '2018-01-28 08:02:01');
+insert into account values ('lequyen','123abc', N'Quyên', N'Lệ', 'F', '012378831', 'doai@gmail.com', 1, '2017-01-10 18:03:01', 212213122, '2018-02-10 12:12:01');
+insert into account values ('mytam','123111', N'Tâm', N'Mỹ', 'M', '012312831', 'dung@gmail.com', 0, '2017-05-30 12:02:01', 289889412, '2018-05-30 19:02:01');
+insert into account values ('dongnhi','123123', N'Nhi', N'Đông', 'M', '01238779831', 'anhhi@gmail.com', 1, '2017-06-10 18:04:01', 213271132, '2018-06-30 07:02:01');
+insert into account values ('bichphuong','123111', N'Phương', 'Bích', 'F', '012789831', 'lequyen@gmail.com', 0, '2017-05-30 18:01:01', 288891211, '2018-11-30 03:02:01');
+insert into account values ('phuongthanh','1231311',N'Thanh', 'Phương', 'F', '0112569831', 'hongocha@gmail.com', 0, '2017-05-30 18:01:01', 71772412, '2018-09-30 22:02:01');
+insert into account values ('damvinhhung','123','Hưng', 'Đàm Vĩnh', 'M', '01545749831', 'mytam@gmail.com', 1, '2017-05-21 18:02:01', 45452412, '2018-10-01 16:02:01');
 
 insert into skill ( other) values ( N'Biết đi ca hát');
 insert into skill ( other) values ( N'Có khả năng đọc hiểu tài liệu bằng tiếng Anh.');
@@ -383,8 +383,8 @@ insert into companyManager values ('lequyen');
 insert into ManHasService values (1, 'camly');
 insert into ManHasService values (2, 'lequyen');
 
-insert into company (man_username, name, num_employee, nation, email, phoneNumber) values ('camly',N'FPT Software', 1000, N'Việt Nam', 'fptsoftware@gmail.com', 0899848731);
-insert into company (man_username, name, num_employee, nation, email, phoneNumber) values ('lequyen',N'Evolable Asia VietNam', 1000, N'Việt Nam', 'EvolableAsia@gmail.com', 089984872);
+insert into company (man_username, name, num_employee, nation, email, phoneNumber, description) values ('camly',N'FPT Software', 1000, N'Việt Nam', 'fptsoftware@gmail.com', 0899848731, N'FPT đây :)');
+insert into company (man_username, name, num_employee, nation, email, phoneNumber, description) values ('lequyen',N'Evolable Asia VietNam', 1000, N'Việt Nam', 'EvolableAsia@gmail.com', 089984872, N'Evolable đây :)');
 
 insert into canHasFieldWork values ('hongocha', 1);
 insert into canHasFieldWork values ('quangle', 2);
@@ -446,7 +446,7 @@ GO
 
 --Procedure
 
-CREATE PROC joinTableTest
+CREATE PROC listAllJob
 AS
 BEGIN
 	SELECT *
@@ -490,14 +490,14 @@ BEGIN
 END
 GO
 
-insert into account values ('phthphat','123456',N'Phat', 'Pham', 'M', '0906749801', 'phthphat@gmail.com', 1, '2017-05-22 18:02:01', 2144502, '2018-12-30 21:02:01');
+--insert into account values ('phthphat','123456',N'Phat', 'Pham', 'M', '0906749801', 'phthphat@gmail.com', 1, '2017-05-22 18:02:01', 2144502, '2018-12-30 21:02:01');
 GO
 DECLARE @tempTable TABLE(id NVARCHAR(10), title NVARCHAR(100), companyName NVARCHAR(100), decription NVARCHAR(MAX) )
 INSERT INTO @tempTable SELECT job.ID, title, name ,job.description FROM dbo.job INNER JOIN dbo.company ON dbo.job.com_ID = dbo.company.ID
 SELECT * FROM @tempTable WHERE id = 3
 GO
 --DECLARE @tempTable TABLE(id NVARCHAR(10), title NVARCHAR(100), companyName NVARCHAR(100), decription NVARCHAR(MAX) ) INSERT INTO @tempTable SELECT job.ID, title, name ,job.description FROM dbo.job INNER JOIN dbo.company ON dbo.job.com_ID = dbo.company.ID SELECT* FROM @tempTable WHERE id = 3
-insert into company (man_username, name, num_employee, nation, email, phoneNumber) values ('3',N'3', 3, N'3', '3', 3);
+--insert into company (man_username, name, num_employee, nation, email, phoneNumber) values ('3',N'3', 3, N'3', '3', 3);
 GO
 CREATE PROC changePassword
 	@username NVARCHAR(100),
@@ -509,7 +509,4 @@ BEGIN
 	WHERE username = @username
 END
 GO
-EXEC dbo.changePassword @username = N'bichphuong', -- nvarchar(100)
-    @newPassword = N'123456' -- nvarchar(100)
-GO
-SELECT password FROM dbo.account WHERE username = 'bichphuong'
+DECLARE @tempTable TABLE(id NVARCHAR(10), title NVARCHAR(100), companyName NVARCHAR(100), decription NVARCHAR(MAX), salary INT ) INSERT INTO @tempTable SELECT job.ID, title, name ,job.description, salary FROM dbo.job INNER JOIN dbo.company ON dbo.job.com_ID = dbo.company.ID SELECT* FROM @tempTable WHERE id = '1'

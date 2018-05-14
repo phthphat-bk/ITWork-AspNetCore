@@ -4,15 +4,15 @@
 }
 @if (UserModel._isLogIn)
 {
-    <p>@UserModel._username <a asp-controller="User" asp-action="LogOut">Log out</a></p><br />
-    <p><a asp-controller="user" asp-action="changePasswordForm">Change password</a></p>
+    <h3>@UserModel._username - <a asp-controller="User" asp-action="LogOut">Log out</a></h3>
+    <a asp-controller="user" asp-action="changePasswordForm">Change password</a><br />
 
 }
 else
 {
-    <a asp-controller="user" asp-action="Index">Log In</a>
+    <a asp-controller="user" asp-action="Index">Log In</a><br />
 }
-<a asp-controller="company" asp-action="index">View All company</a>
+<a asp-controller="company" asp-action="index">View All company</a><br />
 <a asp-controller="user" asp-action="createAccount">Create account</a>
 
 <!--Banner-->

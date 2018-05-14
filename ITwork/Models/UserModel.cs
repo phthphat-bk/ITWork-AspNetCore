@@ -37,8 +37,8 @@ namespace ITwork.Models
         }
         public void changePassword(string newPassword)
         {
-            string query = "EXEC dbo.changePassword @username = '"+ _username +"', @newPassword = '"+ newPassword +"'";
-            DataProvider.Instance.ExecuteQuery(query);
+            string query = "EXEC dbo.changePassword @username , @newPassword";
+            DataProvider.Instance.ExecuteQuery(query, new object[] { _username, newPassword });
         }
         public void LogOut()
         {
