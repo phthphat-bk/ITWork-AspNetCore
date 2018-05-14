@@ -481,7 +481,7 @@ CREATE PROC findJobAndLocation
 	@location NVARCHAR(100)
 AS
 BEGIN
-	SELECT title, company.name, job.description, city.name
+	SELECT job.ID, title, company.name, job.description, city.name
 	FROM dbo.company
 	INNER JOIN dbo.location ON	company.ID=ID_company
 	INNER JOIN dbo.job ON company.ID = job.com_ID
@@ -509,4 +509,3 @@ BEGIN
 	WHERE username = @username
 END
 GO
-DECLARE @tempTable TABLE(id NVARCHAR(10), title NVARCHAR(100), companyName NVARCHAR(100), decription NVARCHAR(MAX), salary INT ) INSERT INTO @tempTable SELECT job.ID, title, name ,job.description, salary FROM dbo.job INNER JOIN dbo.company ON dbo.job.com_ID = dbo.company.ID SELECT* FROM @tempTable WHERE id = '1'
